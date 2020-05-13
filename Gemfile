@@ -15,6 +15,9 @@ gem 'jbuilder', '>= 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '>= 1.2'
 
+gem 'mysql2', '>= 0.5.3'
+gem 'rubocop', '>= 0.83'
+
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
