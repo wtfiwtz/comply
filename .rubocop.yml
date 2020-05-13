@@ -1,0 +1,7 @@
+AllCops:
+  Exclude:
+    - 'node_modules/**/*.rb'
+    - 'bin/*'
+
+Metrics/LineLength:
+  Max: 120
