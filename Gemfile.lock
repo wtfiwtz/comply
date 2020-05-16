@@ -45,6 +45,8 @@ GEM
     activerecord (6.0.3)
       activemodel (= 6.0.3)
       activesupport (= 6.0.3)
+    activerecord-import (1.0.4)
+      activerecord (>= 3.2)
     activestorage (6.0.3)
       actionpack (= 6.0.3)
       activejob (= 6.0.3)
@@ -58,6 +60,7 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    amazing_print (1.1.0)
     ast (2.4.0)
     bindex (0.8.1)
     bootsnap (1.4.6)
@@ -234,6 +237,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-import (>= 1.0.4)
+  amazing_print
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
@@ -254,9 +259,6 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webdrivers
   webpacker (>= 4.0)
-
-RUBY VERSION
-   ruby 2.7.1p83
 
 BUNDLED WITH
    2.1.2
