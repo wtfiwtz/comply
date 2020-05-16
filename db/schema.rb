@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -14,42 +12,45 @@
 
 ActiveRecord::Schema.define(version: 2020_05_16_065824) do
 
-  create_table 'asset_vulnerabilities', force: :cascade do |t|
-    t.integer 'asset_id', null: false
-    t.integer 'vulnerability_id', null: false
-    t.string 'external'
-    t.string 'hostname'
-    t.string 'ipv4'
-    t.string 'netbios_name'
-    t.text 'fqdn'
-    t.datetime 'first_seen'
-    t.datetime 'last_seen'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['asset_id'], name: 'index_asset_vulnerabilities_on_asset_id'
-    t.index ['vulnerability_id'], name: 'index_asset_vulnerabilities_on_vulnerability_id'
+  create_table "asset_vulnerabilities", force: :cascade do |t|
+    t.integer "asset_id", null: false
+    t.integer "vulnerability_id", null: false
+    t.string "external"
+    t.string "hostname"
+    t.string "ipv4"
+    t.string "netbios_name"
+    t.string "operating_system"
+    t.string "severity"
+    t.string "state"
+    t.text "fqdn"
+    t.datetime "first_seen"
+    t.datetime "last_seen"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["asset_id"], name: "index_asset_vulnerabilities_on_asset_id"
+    t.index ["vulnerability_id"], name: "index_asset_vulnerabilities_on_vulnerability_id"
   end
 
-  create_table 'assets', force: :cascade do |t|
-    t.string 'external'
-    t.text 'fqdn'
-    t.string 'netbios_name'
-    t.string 'operating_system'
-    t.string 'last_ipv4'
-    t.string 'last_ipv6'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "assets", force: :cascade do |t|
+    t.string "external"
+    t.text "fqdn"
+    t.string "netbios_name"
+    t.string "operating_system"
+    t.string "last_ipv4"
+    t.string "last_ipv6"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table 'vulnerabilities', force: :cascade do |t|
-    t.integer 'external'
-    t.string 'name'
-    t.string 'state'
-    t.string 'severity'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "vulnerabilities", force: :cascade do |t|
+    t.integer "external"
+    t.string "name"
+    t.string "state"
+    t.string "severity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key 'asset_vulnerabilities', 'assets'
-  add_foreign_key 'asset_vulnerabilities', 'vulnerabilities'
+  add_foreign_key "asset_vulnerabilities", "assets"
+  add_foreign_key "asset_vulnerabilities", "vulnerabilities"
 end

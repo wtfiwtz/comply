@@ -11,6 +11,9 @@ class CreateAssetVulnerabilities < ActiveRecord::Migration[6.0]
       t.string :hostname
       t.string :ipv4
       t.string :netbios_name
+      t.string :operating_system
+      t.string :severity
+      t.string :state
       t.text :fqdn
       t.datetime :first_seen
       t.datetime :last_seen
