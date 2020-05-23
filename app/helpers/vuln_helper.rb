@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# VulnHelper class
 module VulnHelper
   def severity_to_colour(severity_id)
     case severity_id

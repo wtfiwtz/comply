@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Vulnerability Controller class
 class VulnController < ApplicationController
   def index
     @merged_counts = obtain_merged_counts
