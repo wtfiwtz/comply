@@ -1,0 +1,10 @@
+h1= @asset.last_ipv4
+ul
+  - @asset.vulnerabilities.order('vulnerabilities.severity_id DESC, vulnerabilities.name DESC').each do |vuln|
+    li
+      = vuln.name
+      - color = severity_to_colour(vuln.severity_id)
+      span style="font-style:italic;color:#{color}"
+        |  (
+        = vuln.severity
+        | )

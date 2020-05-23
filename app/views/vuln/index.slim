@@ -1,0 +1,11 @@
+ul
+  - @assets.each do |asset|
+    li
+      a href=vuln_path(asset.id)
+        = asset.last_ipv4
+      |  (
+      = asset.asset_vulnerabilities.count
+      |  issues;
+      |
+      = show_severity_counts(asset)
+      | )

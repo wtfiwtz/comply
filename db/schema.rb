@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_16_065824) do
+ActiveRecord::Schema.define(version: 2020_05_17_095300) do
 
   create_table "asset_vulnerabilities", force: :cascade do |t|
     t.integer "asset_id", null: false
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_05_16_065824) do
     t.string "severity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "severity_id"
   end
 
   add_foreign_key "asset_vulnerabilities", "assets"
