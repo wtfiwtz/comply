@@ -4,8 +4,7 @@ ul
       a href=vuln_path(asset.id)
         = asset.last_ipv4
       |  (
-      = asset.asset_vulnerabilities.count
+      = asset.attributes['vuln_count']
       |  issues;
-      |
-      = show_severity_counts(asset)
+      =< show_severity_counts(asset, @merged_counts[asset.id])
       | )

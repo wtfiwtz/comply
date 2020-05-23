@@ -10,8 +10,8 @@ module VulnHelper
     end
   end
 
-  def show_severity_counts(asset)
-    severities = asset.count_by_severity
+  def show_severity_counts(asset, fast_severities = nil)
+    severities = fast_severities || asset.count_by_severity
     str = ''
     str = append_severity(str, severities, 'critical')
     str = append_severity(str, severities, 'high')
