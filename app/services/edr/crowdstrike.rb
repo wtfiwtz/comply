@@ -6,6 +6,7 @@ require 'oauth2'
 # crowdstrike = Edr::Crowdstrike.new
 # asset_ids = crowdstrike.asset_ids
 # assets = crowdstrike.assets(asset_ids)
+# crowdstrike.ingest_assets(crowdstrike.map_assets(assets))
 
 module Edr
   # Crowdstrike importer service
@@ -66,5 +67,17 @@ module Edr
     #     "minor_version" => "1",
     #     "os_version" => "Windows Server 2008 R2",
     #     "ou" => [
+
+    def map_assets(assets)
+      assets.collect do |asset|
+        attrs = { external: asset['device_id'], last_ipv4: asset['local_ip'], netbios_name: asset['hostname'],
+                  operating_system: asset['os_version'] }
+        Asset.new(attrs)
+      end
+    end
+
+    def ingest_assets(assets)
+      Asset.import assets, validate: true
+    end
   end
 end
