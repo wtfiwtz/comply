@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.1'
+# ruby '2.7.1'
 
 gem 'activerecord-import', '>= 1.0.4'
 gem 'amazing_print'
@@ -15,6 +15,7 @@ gem 'sass-rails', '>= 6'
 gem 'slim', '>= 4.1'
 gem 'sqlite3', '>= 1.4'
 gem 'turbolinks', '>= 5'
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'webpacker', '>= 4.0'
 # gem 'redis', '>= 4.0'
 # gem 'bcrypt', '>= 3.1.7'
